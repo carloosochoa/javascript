@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+
+}
+
+#paddle{
+    width: 40px;
+    height: 150px;
+    background-color: black;
+    border: 1px solid red;
+    box-shadow: 0 0 10px 3px red;
+    position: absolute;
+    top: calc(50% - 75px);
+    left: 30px;
+    z-index: 10;
+}
+
+#ball{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 20px);
+    border: 1px solid greenyellow;
+    box-shadow: 0 0 10px 3px greenyellow;
+    z-index: 10;
+}
+
+#medio{
+    position: absolute;
+    height: 100%;
+    width: 6px;
+    left: calc(50% - 3px);
+    background-color: black;
+    border: 1px solid yellow;
+    box-shadow: 0 0 10px 3px greenyellow;
+    z-index: 1;
+}
+.banda{
+    background-color: black;
+    position: absolute;
+    border: 1px solid greenyellow;
+    box-shadow:  0 0 10px 3px greenyellow;
+}
+#banda1{
+    width: 100%;
+    height: 6px;
+}
+#banda2{
+    width: 6px;
+    height: 100%;
+    right: 0;
+}
+#banda3{
+    width: 100%;
+    height: 6px;
+    bottom: 0;
+}
+#banda4{
+    width: 6px;
+    height: 100%;
+    left: 0;
+}

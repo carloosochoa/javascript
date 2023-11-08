@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+    <script>
+        
+        function buscaEnlaces(){
+            let resultado =  document.getElementById("resultado_enlaces");
+            resultado.innerHTML = "<em>href: </em>";
+            const texto = document.getElementById("texto").value;
+            const enlaces = /<a\s[^>]*href="([^"]*)"[^>]*>/gm;
+            const busqueda = texto.matchAll(enlaces);
+            const array = [];
+            for (elem of busqueda) {
+                array.push(elem[1]);
+            }
+            array.forEach((elem)=> {
+                 resultado.innerHTML+= "<br/>" + elem;
+            })
+
+        }
+        
+        function buscaImagenes(){
+            let resultado =  document.getElementById("resultado_img");
+            resultado.innerHTML = "<em>src: </em>";
+            const texto = document.getElementById("texto").value;
+            const img = /<img\s[^>]*src="([^"]*)"[^>]*>/gm;
+            const busqueda = texto.matchAll(img);
+            const array = [];
+            for (elem of busqueda) {
+                array.push(elem[1]);
+            }
+            array.forEach((elem)=> {
+                 resultado.innerHTML+= "<br/>" + elem;
+            })
+        }
+
+    </script>
+</head>
+<body>
+    <textarea id="texto" cols="50" rows="10"></textarea>
+    <br>
+
+    <button onclick="buscaEnlaces()">Buscar Enlaces</button>
+    <button onclick="buscaImagenes()">Buscar Imagenes</button>
+    <div id="resultado_enlaces"></div>
+    <br>
+    <div id="resultado_img"></div>
+</body>
+
+</html>
